@@ -2758,7 +2758,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
 .highlights-container{
   background : linear-gradient(150deg, #4b7cc6, #1a3c6e);
 }
-.techloop-detail-container{
+.grey-background{
     background-color : #f5f5f5;
 }
 .text-techloop{
@@ -2841,9 +2841,12 @@ a{
     box-sizing: border-box;
     max-width:100%;
   }
+  .contact-1{
+    border-bottom : 1px solid #ccc;
+  }
 }
 /*Style for contact us*/
-.contact-us-container{
+#contact-us{
   background-color : #f5f5f5;
   padding-bottom : 5%;
 }
@@ -2857,4 +2860,10 @@ a{
   .contact-1{
     border-right: 1px solid #ccc;
   }
+  .mid-hr{
+    display : none;
+  }
+}
+.text-black{
+  color : #000;
 }
