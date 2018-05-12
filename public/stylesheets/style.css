@@ -2657,12 +2657,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
 
 .headings-text{
   font-family: Montserrat;
-  font-size: 40px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.09;
-  letter-spacing: 0.6px;
+  font-size: 43px;
   color:#fff;
 }
 
@@ -2954,4 +2949,9 @@ a{
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+.dark-headings-text {
+  color: #000;
+  text-align: center;
+  font-size: 39px;
 }
