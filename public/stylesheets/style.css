@@ -1548,9 +1548,9 @@ blockquote {
   right: 0px;
   padding-top: 11px;
   padding-right: 15px;
-  font-family: Montserrat, sans-serif;
-  color: #fff;
-  font-size: 10px;
+  font-family: Montserrat;
+  color: #000;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -1958,7 +1958,7 @@ html.w-mod-js *[data-ix="box-bg-initial-appearane"] {
 }
 
 html.w-mod-js *[data-ix="show-pop-up-on-click"] {
-  display: none;
+  /*display: none;*/
 }
 
 html.w-mod-js *[data-ix="pop-up-initial-appearance"] {
@@ -2668,14 +2668,14 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
 
 .aboutus-heading{
   font-family: Montserrat;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: 1.09;
   letter-spacing: 0.6px;
   color:#fff;
-  text-align:left;
+  text-align:center;
 }
 
 .aboutus-text{
@@ -2864,6 +2864,35 @@ a{
     display : none;
   }
 }
-.text-black{
-  color : #000;
+.text-black {
+  color: #000;
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h4 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+  .popup h4 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 14px;
+  }
 }

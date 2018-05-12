@@ -3049,14 +3049,14 @@ Webflow.require('ix').init([{
     "name": "Show Pop Up On Click",
     "value": {
         "style": {
-            "display": "none"
+            //"display": "none"
         },
         "triggers": [{
             "type": "click",
             "selector": ".pop-up",
             "stepsA": [{
                 "display": "block",
-                "opacity": 1,
+                "opacity": 0.9,
                 "transition": "opacity 500ms ease 0ms"
             }],
             "stepsB": []
