@@ -2896,3 +2896,6 @@ a{
     font-size: 14px;
   }
 }
+.padded-5{
+  padding : 5% 0 0 0;
+}
