@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700,900|Fira+Sans:400,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/stylesheets/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="/stylesheets/itinerary.css"> <!-- Resource style -->
+    <script src="/javascripts/modernizr.js"></script> <!-- Modernizr -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Itinerary | Techloop Congress</title>
+    <!--Font awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <style>
+        header{
+            padding : 3%;
+            color : #fff;
+            text-align : center;
+            font-size : 50px;
+            font-weight : bolder;
+            background: linear-gradient(150deg, #4b7cc6, #1a3c6e);
+            font-family: "Playfair Display", serif;
+        }
+        @media screen and (min-with : 500px){
+            .prev,.next{
+                display:none;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    Itinerary
+</header>
+<section class="cd-horizontal-timeline">
+    <div class="timeline">
+        <div class="events-wrapper">
+            <div class="events" align="center">
+                <ol>
+                    <li><a href="#0" data-date="03/08/2018" class="selected">Day 1</a></li>
+                    <li><a href="#0" data-date="04/08/2018">Day 2</a></li>
+                    <li><a href="#0" data-date="05/08/2018">Day 3</a></li>
+                </ol>
+
+                <span class="filling-line" aria-hidden="true"></span>
+            </div> <!-- .events -->
+        </div> <!-- .events-wrapper -->
+
+        <ul class="cd-timeline-navigation">
+            <li><a href="#0" class="prev inactive">Prev</a></li>
+            <li><a href="#0" class="next">Next</a></li>
+        </ul> <!-- .cd-timeline-navigation -->
+    </div> <!-- .timeline -->
+
+    <div class="events-content">
+        <ol>
+            <li class="selected" data-date="03/08/2018">
+                <h2>Day 1</h2>
+                <em>August 3rd, 2018</em>
+                <section>
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Events</div>
+
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"><b>Event </b></th>
+                                    <th scope="col"><b>Starts</b></th>
+                                    <th scope="col"><b>Ends</b></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row"> 1 </th>
+                                    <td> Session 1 </td>
+                                    <td> 09:00 </td>
+                                    <td> 12:00 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td> Lunch Break </td>
+                                    <td> 12:00</td>
+                                    <td> 14:00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td> Session 2 </td>
+                                    <td> 14:00</td>
+                                    <td> 16:30 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td> Tea Break </td>
+                                    <td> 16:30 </td>
+                                    <td> 17:00 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td> Project based session </td>
+                                    <td> 17:00 </td>
+                                    <td> 19:00 </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <caption><i class="far fa-clock"></i> Time in IST </caption>
+                    </div>
+                </section>
+            </li>
+
+            <li data-date="04/08/2018">
+                <h2>Day 2</h2>
+                <em>August 4th, 2018</em>
+                <section>
+
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Events</div>
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"><b>Event </b></th>
+                                    <th scope="col"><b>Starts</b></th>
+                                    <th scope="col"><b>Ends</b></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row"> 1 </th>
+                                    <td> IEEE SB presentation </td>
+                                    <td> 09:15 </td>
+                                    <td> 10:45 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td> Tea Break </td>
+                                    <td> 10:45</td>
+                                    <td> 11:00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td> Artificial Intelligence-I </td>
+                                    <td> 11:10</td>
+                                    <td> 01:45 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td> Young Professionals </td>
+                                    <td> 14:30 </td>
+                                    <td> 16:00 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td> Tea Break </td>
+                                    <td> 16:00 </td>
+                                    <td> 16:15 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td> Artificial Intelligence - II </td>
+                                    <td> 16:15 </td>
+                                    <td> 18:00 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td> Break </td>
+                                    <td> 18:00 </td>
+                                    <td> 19:15 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">8</th>
+                                    <td> Social Evening </td>
+                                    <td> 19:15 </td>
+                                    <td> 21:00 </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <caption><i class="far fa-clock"></i> Time in IST </caption>
+                    </div>
+                </section>
+            </li>
+
+            <li data-date="05/08/2018">
+                <h2>Day 3</h2>
+                <em>August 5th, 2018</em>
+                <section>
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">Events</div>
+
+                            <!-- Table -->
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"><b>Event </b></th>
+                                    <th scope="col"><b>Starts</b></th>
+                                    <th scope="col"><b>Ends</b></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row"> 1 </th>
+                                    <td> IEEE VIT Chapter </td>
+                                    <td> 09:45 </td>
+                                    <td> 10:45 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td> Block Chains </td>
+                                    <td> 10:45</td>
+                                    <td> 13:00</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td> Lunch Break </td>
+                                    <td> 13:00</td>
+                                    <td> 14:30 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td> Integration Of AI in Block Chains </td>
+                                    <td> 14:30 </td>
+                                    <td> 16:15 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td> Tea Break </td>
+                                    <td> 16:15 </td>
+                                    <td> 16:30 </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td> Certificate and Goodies distribution </td>
+                                    <td> 16:30 </td>
+                                    <td> 18:00 </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <caption><i class="far fa-clock"></i> Time in IST </caption>
+                    </div>
+                </section>
+            </li>
+        </ol>
+    </div> <!-- .events-content -->
+    <div class="text-center">
+        <a href="/">
+            <button class="btn btn-info">Go Back</button></a>
+    </div>
+</section>
+
+<script src="/javascripts/jquery-2.1.4.js"></script>
+<script src="/javascripts/jquery.mobile.custom.min.js"></script>
+<script src="/javascripts/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>

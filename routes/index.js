@@ -5,5 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+/* GET Itinerary page. */
+router.get('/itinerary', function(req, res, next) {
+    res.render('itinerary');
+});
+
 
 module.exports = router;
