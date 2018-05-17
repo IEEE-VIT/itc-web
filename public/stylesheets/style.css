@@ -895,14 +895,14 @@ blockquote {
 .nav-link {
   position: relative;
   overflow: hidden;
-  padding: 32px 28px 25px;
+  padding: 32px 16px 25px;
   -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
   font-family: Raleway, sans-serif;
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: 1.5px;
   text-decoration: none;
@@ -967,7 +967,7 @@ blockquote {
 .nav-menu {
   display: inline-block;
   width: 80%;
-  float: none;
+  float: right;
 }
 
 .hero-section-1 {
