@@ -642,7 +642,7 @@ label {
 .w-nav {
   position: relative;
   background: #dddddd;
-  z-index: 1000
+  z-index: 1000;
 }
 
 .w-nav:before,
@@ -904,7 +904,7 @@ blockquote {
   color: #fff;
   font-size: 17px;
   font-weight: 800;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
   text-decoration: none;
 }
 
@@ -982,11 +982,21 @@ blockquote {
   background-repeat: no-repeat;
 }
 
+.content-wrapper-fixed {
+  position: relative;
+  display: block;
+  width: 98%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 .content-wrapper {
   position: relative;
   display: block;
-  width: 100%;
-  max-width: 1070px;
+  /*width: 100%;*/
+  max-width: 98%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
@@ -2054,6 +2064,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   }
   .nav-link {
     width: 100%;
+    padding: 0.5em 16px 25px;
   }
   .nav-link.register {
     display: inline-block;
@@ -2911,14 +2922,14 @@ a{
   text-align: center;
 }
 
-.column {
+.column1 {
   float: left;
   width: 50%;
   padding: 5px;
 }
 
 /* Clearfix (clear floats) */
-.row::after {
+.row1::after {
   content: "";
   clear: both;
   display: table;
@@ -2926,7 +2937,7 @@ a{
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 500px) {
-  .column {
+  .column1 {
     width: 100%;
   }
 }
