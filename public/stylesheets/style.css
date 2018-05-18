@@ -3020,28 +3020,20 @@ a{
   /*SPONSOR logo placement CSS ENDS*/
 }
 
-/*.sponsor {*/
-  /*width: 50%;*/
-  /*padding-right: 11px;*/
-  /*padding-left: 11px;*/
-/*}*/
 
-/*.sponsor:hover {*/
-  /*border-bottom-style: none;*/
-/*}*/
+.sponsors-logo {
+  width: 100vh;
+  opacity: 0.9;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
 
-/*.sponsors-logo {*/
-  /*width: 100vh;*/
-  /*opacity: 0.9;*/
-  /*-webkit-transition: all 300ms ease;*/
-  /*transition: all 300ms ease;*/
-/*/!*}*!/*/
+.sponsors-logo:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
-/*.sponsors-logo:hover {*/
-  /*-webkit-transform: scale(1.1);*/
-  /*-ms-transform: scale(1.1);*/
-  /*transform: scale(1.1);*/
-/*}*/
 .dark-headings-text {
   color: #000;
   text-align: center;
@@ -3068,8 +3060,4 @@ a{
 .row.no-gutter [class*='col-']:not(:last-child) {
   padding-right: -10%;
   padding-left: 0;
-}
-.row > div {
-  /*background: lightgrey;*/
-  /*border: 1px solid;*/
 }
