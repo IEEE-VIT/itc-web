@@ -1,0 +1,153 @@
+<html ng-app="congress" ng-controller="usersController">
+<!--Sleep is a dream -->
+<!--             Hemant H Kumar-->
+<!---->
+<!--All that matters is what comes after the run button-->
+<!--             Raj Chandra-->
+<base href="/users/wegotyou">
+<head>
+    <meta charset="utf-8" />
+    <title>Participants | Techloop Congress</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <link href="../stylesheets/regform.css" rel="stylesheet" type="text/css" />
+
+    <!--Angular Goes Here-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/auth.js"></script>
+</head>
+<body ng-cloak>
+<div class="container-fluid" style="margin:5% 0 9% 0;"  ng-init="getUsers()">
+    <div align="center" style="text-align:center;margin:5%;">
+        <img href="/" style="width:20em;height:6em;" src="../images/mainLogo.png" >
+    </div>
+    <p ng-if="code == 1">Something is not right :O</p>
+    <div class="col" align="left">
+        <span class="badge badge-warning">Email not sent yet !</span>
+        <span class="badge badge-danger">Invalid Email ID !</span>
+        <span class="badge badge-success">Email sent Successfully.</span>
+        <span class="badge badge-secondary">Use it to reset to default.</span>
+
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Registered On</th>
+            <th scope="col">Email Status</th>
+            <th scope="col">EMailed By</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in response">
+            <th scope="row">{{$index+1}}</th>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.timestamp | date:'dd/MM @ h:mma' }}</td>
+            <td>
+                <button class="btn btn-success" ng-if="user.emailSent && !user.invalidEmail">Sent</button>
+                <button class="btn btn-warning" ng-click="emailSent(user.email)" ng-if="!user.emailSent && !user.invalidEmail">Pending</button>
+                <button class="btn btn-danger" ng-click="invalidEmail(user.email)" ng-if="!user.emailSent">Invalid</button>
+                <button class="btn btn-secondary" ng-click="resetStatus(user.email)" ng-if="user.emailSent || user.invalidEmail">Reset</button>
+            </td>
+            <td>
+                <select name="whoMailed"  class="custom-select mb-3" ng-change="whoMailed(user.email,user.whoMailed)" id="whoMailed"
+                        ng-options="option for option in ['Apoorva','Ayush','Druvang','Chaitanya']"
+                        ng-model="user.whoMailed">
+                </select>
+                <span class="badge badge-primary float-right">{{user.whoMailed}}</span>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+    <div align="center">That's it for now !</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    var app = angular.module('congress',["ngRoute"],function($locationProvider){
+        $locationProvider.html5Mode(true);
+    });
+    app.controller('usersController',['$scope','$http','$location',function ($scope,$http,$location) {
+        $scope.getUsers = function () {
+            $http.post('/users/wegotyou').then(successCallback, errorCallback);
+            function successCallback(response) {
+                $scope.response = response.data.users;
+                $scope.code = response.data.code;
+            }
+            function errorCallback(error) {
+                $scope.response = {
+                    message : 'Something went wrong. Please check your network connectivity.',
+                    code : 1
+                };
+            }
+        };
+        $scope.whoMailed = function(email,whoMailed)
+        {
+            // console.log(whoMailed)
+            var selectedValue = whoMailed;
+            // if(selectedValue && (selectedValue!==whoMailed || !whoMailed)){
+                $http.post('/users/mailedUpdate',{email : email, whoMailed:selectedValue}).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.response = response.data.users;
+                    $scope.code = response.data.code;
+                }
+                function errorCallback(error) {
+                    $scope.response = {
+                        message : 'Something went wrong. Please check your network connectivity.',
+                        code : 1
+                    };
+                }
+            // }
+        };
+        $scope.emailSent = function (email) {
+            $http.post('/users/update',{email : email}).then(successCallback, errorCallback);
+            function successCallback(response) {
+                $scope.response = response.data.users;
+                $scope.code = response.data.code;
+            }
+            function errorCallback(error) {
+                $scope.response = {
+                    message : 'Something went wrong. Please check your network connectivity.',
+                    code : 1
+                };
+            }
+        };
+        $scope.invalidEmail = function (email) {
+            $http.post('/users/invalidEntry',{email : email}).then(successCallback, errorCallback);
+            function successCallback(response) {
+                $scope.response = response.data.users;
+                $scope.code = response.data.code;
+            }
+            function errorCallback(error) {
+                $scope.response = {
+                    message : 'Something went wrong. Please check your network connectivity.',
+                    code : 1
+                };
+            }
+        };
+        $scope.resetStatus = function (email) {
+            $http.post('/users/resetStatus',{email : email}).then(successCallback, errorCallback);
+            function successCallback(response) {
+                $scope.response = response.data.users;
+                $scope.code = response.data.code;
+            }
+            function errorCallback(error) {
+                $scope.response = {
+                    message : 'Something went wrong. Please check your network connectivity.',
+                    code : 1
+                };
+            }
+        };
+    }]);
+</script>
+</body>
+</html>

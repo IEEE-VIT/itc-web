@@ -1,0 +1,203 @@
+<html ng-app="congress" ng-controller="authController">
+<!--Sleep is a dream -->
+<!--             Hemant H Kumar-->
+<!---->
+<!--All that matters is what comes after the run button-->
+<!--             Raj Chandra-->
+<base href="/register">
+<head>
+<meta charset="utf-8" />
+<title>Registration | Techloop Congress</title>
+<meta content="This is the official website of techloop congress conducted by IEEE VIT Chapter." name="description" />
+<meta content="Home" property="og:title" />
+<meta content="IEEE Techloop congress Official website" property="og:description" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="./stylesheets/regform.css" rel="stylesheet" type="text/css" />
+
+<!--Angular Goes Here-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script language="javascript" type="text/javascript" src="/javascripts/auth.js"></script>
+
+</head>
+<body ng-cloak>
+<div class="row" style="text-align:center;margin-top:5%;">
+    <img href="/" style="width:20em;height:6em;" src="./images/mainLogo.png" >
+</div>
+<div class="container" style="background:#F3F3F3; width:80%; margin-top:5%;margin-bottom:9%;">
+    <form ng-submit="getRegistered()">
+        <div class="row row-css">
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label for="nameInput" class="labelTitle">Name</label>
+                    <input type="text" class="form-control normal-input" name="name" ng-model="participant.name" id="nameInput" placeholder="Enter Your Name" required>
+                    <div class="error-message" id="name-error">Field is Mandatory and please Restrict Name to 100 Characters</div>
+                    <div class="error-message" id="name1-error">Invalid Name (Only alphanumeric and <code> _ @ . # & , - " ' </code> characters are allowed)</div>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[0].error" style="padding:2%;">{{errors[0].message}}</div>
+                <div class="form-group">
+                    <label for="emailInput" class="labelTitle">Email address</label>
+                    <input type="email" class="form-control normal-input" name="email" ng-model="participant.email" id="emailInput" placeholder="Enter Your Email Address" required>
+                    <div class="error-message" id="email-error">Invalid E-Mail Address</div>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[1].error" style="padding:2%;">{{errors[1].message}}</div>
+            </div>
+            <div class="col-md-6  col-xs-12">
+                <div class="form-group">
+                    <label for="univInput" class="labelTitle">College/University</label>
+                    <input type="text" class="form-control normal-input" name="institute" ng-model="participant.institute" id="univInput" placeholder="Name of your Institution" required>
+                    <div class="error-message" id="univ-error">Invalid Institute Name (Only alphanumeric and <code> _ @ . # & , - " ' </code> characters are allowed)</div>
+                    <div class="error-message" id="univ1-error">Please restrict Institute Name to 100 Characters</div>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[2].error" style="padding:2%;">{{errors[2].message}}</div>
+
+                <div class="form-group">
+                    <label for="telInput" class="labelTitle">Contact Number</label>
+                    <input type="tel" class="form-control normal-input" name="contact" ng-model="participant.contact" id="telInput" placeholder="Enter your Contact Number" required>
+                    <div class="error-message" id="tel-error">Field is Mandatory and Restrict use of Special Characters ( <code> + - ( ) </code> allowed)</div>
+                    <div class="error-message" id="tel1-error">Please restrict Contact Number to 20 Characters</div>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[3].error" style="padding:2%;">{{errors[3].message}}</div>
+
+            </div>
+        </div>
+        <div class="row spacer">
+        </div>
+        <div class="row row-css">
+            <div class="col-md-12">
+                <label for="accInput" class="labelTitle">Would you prefer your stay was in a dorm (arranged by IEEE VIT) or in a hotel (no arrangements made by us for the hotel) ?</label>
+                <div class="radio">
+                    <input id="acc-radio-1" name="stay" ng-model="participant.dorm" value="true" type="radio">
+                    <label for="acc-radio-1" class="radio-label" style="padding-right:3em;padding-bottom: 1em;">Dorm</label>
+                    <input id="acc-radio-2" name="stay" ng-model="participant.dorm" value="false" type="radio">
+                    <label for="acc-radio-2" class="radio-label">Hotel</label>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[4].error" style="padding:2%;">{{errors[4].message}}</div>
+            </div>
+        </div>
+
+        <div class="row row-css">
+            <div class="col-md-12">
+                <label for="ieeeInput" class="labelTitle">Are you an IEEE Member?</label>
+                <div class="radio">
+                    <input id="ieee-radio-1" name="ieeeMember" ng-model="participant.ieeeMember" value="true" type="radio">
+                    <label for="ieee-radio-1" class="radio-label" style="padding-right:5em; padding-bottom: 1em;">Yes</label>
+                    <input id="ieee-radio-2" name="ieeeMember" ng-model="participant.ieeeMember" value="false" type="radio">
+                    <label for="ieee-radio-2" class="radio-label">No</label>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[5].error" style="padding:2%;">{{errors[5].message}}</div>
+            </div>
+        </div>
+
+        <div class="row row-css" id="ieee-details" style="display:none;">
+            <div class="col-md-12">
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="ieeeDetailsInput-1" class="labelTitle">Which IEEE Section are you a part of?</label>
+                        <input type="text" class="form-control normal-input" name="ieeeSection"  ng-model="participant.ieeeSection" id="ieee-section" placeholder="Enter your IEEE Section">
+                        <div class="error-message" id="ieeesec-error">Invalid IEEE Section Name (Only alphanumeric and <code> _ @ . # & , - " ' </code> characters are allowed)</div>
+                        <div class="error-message" id="ieeesec1-error">Please restrict IEEE Section Name to 100 Characters</div>
+                    </div>
+                    <div class="alert alert-danger" role="alert" ng-if="errors[6].error" style="padding:2%;">{{errors[6].message}}</div>
+
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <div class="form-group">
+                        <label for="ieeeDetailsInput-2" class="labelTitle">IEEE Membership Number</label>
+                        <input type="text" class="form-control normal-input" name="ieeeMemberNumber" ng-model="participant.ieeeMemberNumber" id="ieee-membership" placeholder="Enter Your Number">
+                        <div class="error-message" id="ieeemem-error">Invalid Membership Number (Only digits are allowed)</div>
+                        <div class="error-message" id="ieeemem1-error">Please restrict IEEE Membership Number to 25 Characters</div>
+                    </div>
+                    <div class="alert alert-danger" role="alert" ng-if="errors[7].error" style="padding:2%;">{{errors[7].message}}</div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row text-area">
+            <div class="form-group">
+                <label for="ieee-events" class="labelTitle">Have you been a part of any IEEE Events? If yes, mention the event and your role. (Limit yourself to 200 words)</label>
+                <textarea type="text" class="form-control normal-input" name="ieeeEventsExperience" ng-model="participant.ieeeEventsExperience" id="ieee-events" placeholder="Mention here"></textarea>
+                <div class="error-message" id="ieeeEvent-error">Field is mandatory and please restrict IEEE Events Information to 200 Words</div>
+                <div class="error-message" id="ieeeEvent1-error">Only alphanumeric and <code> _ @ . " ' ( ) / #  & , /  - </code> characters are allowed</div>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-if="errors[8].error" style="padding:2%;">{{errors[8].message}}</div>
+
+        </div>
+        <div class="row row-css">
+            <div class="col-md-12">
+                <label for="sessionInput" class="labelTitle">Which event are you interested in attending?</label>
+                <div class="radio-below">
+                    <input id="session-radio-1" name="session" ng-model="participant.sessionC" value="AC" type="radio">
+                    <label for="session-radio-1" class="radio-label">Techloop: Android Application Development + Congress</label>
+                    <input id="session-radio-2" name="session" ng-model="participant.sessionC" value="IC" type="radio">
+                    <label for="session-radio-2" class="radio-label">Techloop: Internet of Things + Congress</label>
+                    <input id="session-radio-3" name="session" ng-model="participant.sessionC" value="MC" type="radio">
+                    <label for="session-radio-3" class="radio-label">Techloop: Machine Learning + Congress</label>
+                    <input id="session-radio-4" name="session" ng-model="participant.sessionC" value="C" type="radio">
+                    <label for="session-radio-4" class="radio-label">Only Congress</label>
+                </div>
+                <div class="alert alert-danger" role="alert" ng-if="errors[9].error" style="padding:2%;">{{errors[9].message}}</div>
+
+            </div>
+        </div>
+        <div class="row text-area">
+            <div class="form-group">
+                <label for="congress-det-1" class="labelTitle">Why would you like to attend IEEE VIT Techloop Congress? (Limit yourself to 200 words)</label>
+                <textarea type="text" class="form-control normal-input" name="generalQueOne" ng-model="participant.generalQueOne" id="congress-det-1" placeholder="200 words only"></textarea>
+                <div class="error-message" id="generalOne-error">Field is mandatory and please restrict reply to 200 Words</div>
+                <div class="error-message" id="generalOne1-error">Only alphanumeric and <code> _ @ . " ' ( ) / #  & , /  - </code> characters are allowed</div>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-if="errors[10].error" style="padding:2%;">{{errors[10].message}}</div>
+
+        </div>
+        <div class="row text-area">
+            <div class="form-group">
+                <label for="congress-det-2" class="labelTitle">Which upcoming technical transformation do you believe would have a major impact in the near future? (Limit yourself to 200 words)</label>
+                <textarea type="text"  class="form-control normal-input" name="generalQueTwo" ng-model="participant.generalQueTwo" id="congress-det-2" placeholder="200 words only"></textarea>
+                <div class="error-message" id="generalTwo-error">Field is mandatory and please restrict reply to 200 Words</div>
+                <div class="error-message" id="generalTwo1-error">Only alphanumeric and <code> _ @ . " ' ( ) / #  & , /  - </code> characters are allowed</div>
+            </div>
+            <div class="alert alert-danger" role="alert" ng-if="errors[11].error" style="padding:2%;">{{errors[11].message}}</div>
+
+        </div>
+        <div class="row row-css">
+            <div class="col-md-6 col-xs-12" style="text-align:center;">
+                <img id="captchaImg" style="width:12em;height:7em;" src=<%= captcha %> >
+                <i id="refresh" onClick="captchaGen();" class="fa fa-refresh" style="color:#000; font-size: 3em; padding-left:10%;cursor: pointer;"></i>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="form-group">
+                    <label for="captchaInput" class="labelTitle">Please Enter the Text in the Image</label>
+                    <input type="text" class="form-control normal-input" name="captcha" ng-model='participant.captcha' id="captchaInput" placeholder="Enter Captcha Text" required><br>
+                    <div class="alert alert-danger" role="alert" ng-if="errors[12].error">{{errors[12].message}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="message-container" ng-if="response" style="padding-top:3%;">
+            <div class="alert alert-success" role="alert" ng-if="response.code == 0">{{response.message}}</div>
+            <div class="alert alert-danger" role="alert" ng-if="response.code == 1">{{response.message}}</div>
+            <div class="alert alert-primary" role="alert" ng-if="response.code == 2">{{response.message}}</div>
+        </div>
+        <div class="row row-css" style="text-align:center; padding-top:3%;">
+            <button type="submit" class="btn btn-primary" style="margin-right:4em;" id="submitBtn">Submit</button>
+            <button onclick="location.href='/'" type="button" class="btn btn-info">Back</button>
+        </div>
+    </form>
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./javascripts/action.js"></script>
+<script>
+    function captchaGen(){
+        var d = new Date();
+        var n = d.getMilliseconds();
+        console.log("HERE");
+        var link = "/imageGen" + "?param1=" + n.toString();
+        document.getElementById("captchaImg").src=link;
+    }
+</script>
+</html>
