@@ -32,7 +32,7 @@ app.use('/', index);
 app.use('/users', users);
 
 //CONNECTING TO MONGODB ON START
-// console.log(process.env.MONGODB);
+//onsole.log(process.env.MONGODB);
 mongoose.connect(process.env.MONGODB, function(err) {
     if (err) {
         console.log(err);

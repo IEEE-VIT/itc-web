@@ -681,6 +681,7 @@ label {
 .w-nav-menu {
   position: relative;
   float:right;
+  text-align:right;
 }
 
 .w--nav-menu-open {
@@ -2623,6 +2624,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   display: table;
   width:100;
   border-spacing:12px;
+  margin-top:-0.7em;
 }
 
 .icon-background {
@@ -3073,8 +3075,12 @@ a:hover, a:focus, a:active {
 
 .bg-gradient1 span,
 .bg-gradient1:before {
-  background: #2b32b2;
-  background: linear-gradient(180deg, #2b32b2 0%, #1488cc 80%, #1488cc 100%);
+  background-color: cornflowerblue;
+  background-image: -webkit-linear-gradient(270deg, #1a3c6e, #4b7cc6);
+  background-image: linear-gradient(270deg, #1a3c6e, #4b7cc6);
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  /*background: linear-gradient(180deg, #2b32b2 0%, #1488cc 80%, #1488cc 100%);*/
 }
 
 /* fancy Button */
