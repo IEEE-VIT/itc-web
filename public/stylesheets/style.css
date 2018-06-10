@@ -3122,8 +3122,8 @@ a:hover, a:focus, a:active {
 }
 .fancy-button span {
   display: inline-block;
-  padding: 16px 20px;
-  border-radius: 50em;
+  padding: 10px 20px;
+  border-radius: 1em;
   position: relative;
   z-index: 2;
   will-change: transform, filter;
