@@ -3095,6 +3095,7 @@ a:hover, a:focus, a:active {
   line-height: 24px;
   color: #ffffff;
   position: relative;
+  margin-left:-15%;
 }
 .fancy-button.bg-gradient1 {
   text-shadow: 0px 0px 1px #BF4C28;
@@ -3151,4 +3152,10 @@ a:hover, a:focus, a:active {
 .fancy-button:active span {
   -webkit-filter: brightness(0.75) contrast(1.7);
   filter: brightness(0.75) contrast(1.7);
+}
+
+@media screen and (max-width: 500px) {
+  .fancy-button{
+    margin-left:0;
+  }
 }
