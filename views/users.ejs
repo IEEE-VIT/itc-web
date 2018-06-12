@@ -37,6 +37,7 @@
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
+            <th scope="col">Contact Number</th>
             <th scope="col">Registered On</th>
             <th scope="col">Email Status</th>
             <th scope="col">EMailed By</th>
@@ -47,6 +48,7 @@
             <th scope="row">{{$index+1}}</th>
             <td>{{user.name}}</td>
             <td>{{user.email}}</td>
+            <td>{{user.contact}}</td>
             <td>{{user.timestamp | date:'dd/MM @ h:mma' }}</td>
             <td>
                 <button class="btn btn-success" ng-if="user.emailSent && !user.invalidEmail">Sent</button>
