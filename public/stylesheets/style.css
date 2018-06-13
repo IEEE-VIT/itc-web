@@ -3028,7 +3028,7 @@ a{
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
   padding: 0 !important;
-  margin: 0 !important;
+  //margin: 0 !important;
 }
 
 .sponsors-logo:hover {
