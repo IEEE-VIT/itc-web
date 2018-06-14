@@ -2,9 +2,24 @@ var express = require('express');
 var router = express.Router();
 var participant = require('../models/participants.js');
 
+var verifyIeeeMember = (req,res,next)=>{
+    var cookie = req.cookies.IEEE;
+    if(cookie === undefined){
+        res.send({message : 'access denied!!'})
+    }else if(cookie === process.env.COOKIE_VALUE){
+        next();
+    }
+}
+
 /* GET users listing. */
 router.get('/wegotyou',(req,res)=>{
-  res.render('users');
+    var cookie = req.cookies.IEEE;
+    var code = cookie != undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    message = cookie != undefined && cookie === process.env.COOKIE_VALUE? 'You are a verified IEEE member, go ahead !':'You are not verified IEEE member, please authenticate yourself before any action.';
+    res.render('users',{
+        message : message,
+        code : code
+    });
 });
 
 router.post('/wegotyou', (req, res)=>{
@@ -18,7 +33,7 @@ router.post('/wegotyou', (req, res)=>{
   })
 });
 
-router.post('/mailedUpdate/', (req, res)=>{
+router.post('/mailedUpdate/',verifyIeeeMember, (req, res)=>{
     // console.log("hkjnijw");
     participant.update({email : req.body.email},{whoMailed : req.body.whoMailed},(err,data)=> {
         if(err)
@@ -37,7 +52,7 @@ router.post('/mailedUpdate/', (req, res)=>{
     });
 });
 
-router.post('/update', (req, res)=>{
+router.post('/update',verifyIeeeMember, (req, res)=>{
     participant.update({email : req.body.email},{emailSent : true},(err,data)=> {
         if(err)
             throw err;
@@ -54,7 +69,7 @@ router.post('/update', (req, res)=>{
     });
 });
 
-router.post('/invalidEntry', (req, res)=> {
+router.post('/invalidEntry',verifyIeeeMember, (req, res)=> {
     participant.update({email: req.body.email}, {invalidEmail: true}, (err, data) => {
     if(err)
     throw err;
@@ -71,7 +86,7 @@ else
     });
 });
 
-router.post('/resetStatus', (req, res)=>{
+router.post('/resetStatus',verifyIeeeMember, (req, res)=>{
     participant.update({email : req.body.email},{invalidEmail : false,emailSent : false},(err,data)=> {
     if(err)
         throw err;
@@ -87,5 +102,18 @@ router.post('/resetStatus', (req, res)=>{
         }
     });
 });
+
+router.post('/verifyPassword', (req, res)=>{
+    if(req.query.p === process.env.USER_PASSWORD){
+        res.cookie(process.env.COOKIE_NAME,
+            process.env.COOKIE_VALUE, {
+                maxAge: 86400000 // for 1 day
+        });
+        res.send({code : 0, message : 'Access granted !!'});
+    }else{
+        res.send({code : 1, message : 'Sorry access denied!!'});
+    }
+});
+
 module.exports = router;
 
