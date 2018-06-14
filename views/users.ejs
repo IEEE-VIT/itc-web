@@ -21,8 +21,24 @@
 <body ng-cloak>
 <div class="container-fluid" style="margin:5% 0 9% 0;"  ng-init="getUsers()">
     <div align="center" style="text-align:center;margin:5%;">
-        <img href="/" style="width:20em;height:6em;" src="../images/mainLogo.png" >
+        <img href="/" style="width:20em;height:6em;" src="../images/mainLogo.png" ><br><br>
     </div>
+    <form class="form-group row" ng-submit="verifyPassword()">
+        <label for="cat1" class="col-sm-6 col-form-label">Password </label>
+        <div class="input-group col">
+            <input type="text" class="form-control" id="cat1" placeholder="Your password?" aria-label="inputPassword" aria-describedby="basic-addon" ng-model="password">
+            <div class="input-group-append">
+                <button class="input-group-text" id="basic-addon">&nbsp; Verify</button>
+            </div>
+        </div>
+    </form>
+    <%if(code == 1){%>
+        <div class="alert alert-danger"><%=message%></div>
+    <%}else{%>
+        <div class="alert alert-success"><%=message%></div>
+    <%}%>
+    <div class="alert alert-primary" ng-if="res.message" ng-model="res.message">{{res.message}}</div>
+
     <p ng-if="code == 1">Something is not right :O</p>
     <div class="col" align="left">
         <span class="badge badge-warning">Email not sent yet !</span>
@@ -146,6 +162,18 @@
             }
             function errorCallback(error) {
                 $scope.response = {
+                    message : 'Something went wrong. Please check your network connectivity.',
+                    code : 1
+                };
+            }
+        };
+        $scope.verifyPassword = function (email) {
+            $http.post('/users/verifyPassword?p='+$scope.password).then(successCallback, errorCallback);
+            function successCallback(response) {
+                $scope.res = response.data;
+            }
+            function errorCallback(error) {
+                $scope.res = {
                     message : 'Something went wrong. Please check your network connectivity.',
                     code : 1
                 };
