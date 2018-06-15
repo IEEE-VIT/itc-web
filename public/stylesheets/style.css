@@ -2926,7 +2926,7 @@ a{
 
 .wrapper {
   width: 100%;
-  height: 100vh;
+  height: 10vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
