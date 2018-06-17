@@ -3159,3 +3159,69 @@ a:hover, a:focus, a:active {
     margin-left:0;
   }
 }
+
+/*Navbar Registration Button*/
+.fancy-button2 {
+  font-family: Montserrat, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  line-height: 24px;
+  color: #ffffff !important;
+}
+
+.fancy-button2:before {
+  content: '' !important;
+  z-index: -1 !important;
+  height: 40px;
+  border-radius: 2em !important;
+  -webkit-filter: blur(14px) brightness(0.9) !important;
+  filter: blur(14px) brightness(0.9) !important;
+  -webkit-transform-style: preserve-3d !important;
+  transform-style: preserve-3d !important;
+  transition: all 0.3s ease-out !important;
+}
+.fancy-button2 span {
+  border-radius: 1em !important;
+  padding: 10px 20px !important;
+  z-index: 2 !important;
+  will-change: transform, filter !important;
+  -webkit-transform-style: preserve-3d !important;
+  transform-style: preserve-3d !important;
+  transition: all 0.3s ease-out !important;
+}
+.fancy-button2:focus {
+  color: #ffffff !important;
+}
+.fancy-button2:hover {
+  color: #ffffff !important;
+}
+.fancy-button2:hover span {
+  -webkit-filter: brightness(0.9) contrast(1.2);
+  filter: brightness(0.9) contrast(1.2);
+  -webkit-transform: scale(0.96);
+  transform: scale(0.96);
+}
+.fancy-button2:hover:before {
+  -webkit-filter: blur(6px) brightness(0.8) !important;
+  filter: blur(6px) brightness(0.8) !important;
+}
+.fancy-button2:active span {
+  -webkit-filter: brightness(0.75) contrast(1.7) !important;
+  filter: brightness(0.75) contrast(1.7) !important;
+}
+.bg-gradient2 span,
+.bg-gradient2:before {
+  background-color: cornflowerblue !important;
+  background-image: -webkit-linear-gradient(270deg, #1a3c6e, #4b7cc6) !important;
+  background-image: linear-gradient(270deg, #1a3c6e, #4b7cc6) !important;
+  -webkit-transition-property: opacity !important;
+  transition-property: opacity !important;
+  /*background: linear-gradient(180deg, #2b32b2 0%, #1488cc 80%, #1488cc 100%);*/
+}
+@media screen and (max-width: 500px) {
+  .fancy-button2{
+    margin-left:0;
+  }
+}
