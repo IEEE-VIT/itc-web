@@ -2891,6 +2891,103 @@ a{
   font-family: Tahoma, Arial, sans-serif;
 }
 
+/*Style For Social Media*/
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.clip {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.svg--source {
+  display: none
+}
+
+.svg--icon {
+  width: 100%;
+  max-width: 3rem;
+  height: 100%;
+  max-height: 5rem;
+  display: block;
+  margin: 0 auto;
+  fill: currentColor
+}
+
+.wrapper {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.share {
+  width: 5rem;
+  height: 5rem;
+  float: left;
+  margin: .5rem 1rem .5rem 0;
+  color: #2b32b2;
+  border: .125rem solid #f3f3f3;
+  box-shadow: 0 0 8px 0 rgba(50, 50, 50, 0.15);
+  border-radius: 50%;
+  transition: 250ms;
+  
+  &:last-child {
+    margin-right: 0
+  }
+  
+  &:hover,
+  &:focus {
+    background: #f1f1f1;
+  }
+  
+  &:focus {
+    outline-color: inherit;
+  }
+}
+
+.twitter{
+    &:hover,
+    &:focus {
+      color: #2b32b2;
+      box-shadow: 0 0 25px 0 #2b32b2;
+    }
+  }
+   .instagram{
+    &:hover,
+    &:focus {
+      color: #2b32b2;
+      box-shadow: 0 0 25px 0 #2b32b2;
+    }
+  }
+  .facebook{
+    &:hover,
+    &:focus {
+      color: #2b32b2;
+      box-shadow: 0 0 25px 0 #2b32b2;
+    }
+  } 
+  .linkedin{
+  &:hover,
+  &:focus {
+    color: #2b32b2;
+    box-shadow: 0 0 25px 0 #2b32b2;
+  }
+}
+
 /*SPONSOR logo placement CSS BEGINS*/
 .two_row_1{
   overflow:hidden;
