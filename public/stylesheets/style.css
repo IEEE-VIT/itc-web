@@ -429,7 +429,7 @@ label {
   font-weight: bold
 }
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:1270px) {
   .w-container {
     max-width: 728px
   }
@@ -606,7 +606,7 @@ label {
   position: static
 }
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:1270px) {
   .w-nav[data-collapse="medium"] .w-dropdown,
   .w-nav[data-collapse="medium"] .w-dropdown-toggle {
     display: block
@@ -765,7 +765,7 @@ label {
   display: block
 }
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:1270px) {
   .w-nav[data-collapse="medium"] .w-nav-menu {
     display: none
   }
@@ -896,7 +896,7 @@ blockquote {
 .nav-link {
   position: relative;
   overflow: hidden;
-  padding: 32px 16px 25px;
+  padding: 32px 10px 25px;
   -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
@@ -2051,7 +2051,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   transform: translate(0px, 10px);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1270px) {
   .hero-section-1 {
     position: relative;
     display: block;
@@ -2065,7 +2065,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   }
   .nav-link {
     width: 100%;
-    padding: 0.5em 16px 25px;
+    padding: 0.5em 10px 25px;
   }
   .nav-link.register {
     display: inline-block;
