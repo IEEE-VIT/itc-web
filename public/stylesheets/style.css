@@ -3256,3 +3256,130 @@ a:hover, a:focus, a:active {
     margin-left:0;
   }
 }
+
+/*Style for Speakers*/
+.speakers-container{
+  background : linear-gradient(150deg, #4b7cc6, #1a3c6e);
+}
+  .speakers-logo {
+    opacity: 0.9;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+    padding: 0 !important;
+    //margin: 0 !important;
+  }
+  
+  .speakers-logo:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  #myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 100%;
+}
+
+#myImg:hover {}
+
+/* The Modal (background) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 10%; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background : linear-gradient(150deg, #4b7cc6, #1a3c6e);
+    opacity: 100%;
+    
+}
+
+/* Modal Content (image) */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid :black;
+    width: 25%;
+    border-radius:50%;
+    position:fixed;
+    left:5%;
+    opacity: 100%;
+}
+
+/* Add Animation */
+.modal-content,  {    
+    -webkit-animation-name: none;
+    -webkit-animation-duration: 0.6s;
+    animation-name: none;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes none {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes none {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: italic;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #4b7cc6;
+    text-decoration: none;
+    cursor: pointer;
+}
+.speakername{
+    color:white; 
+    text-align:right;
+    padding-left:50%;
+    font-family:montserrat;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.8;
+    font-size:32px;
+    letter-spacing: 0.6px;
+    margin: auto;
+    position:relative;
+    width:45%;
+    opacity: 100%;
+}
+.speakerinfo{
+    opacity: 100%;
+    color:white; 
+    width:45%;
+    font-size:16px;
+    padding-left:50%;
+    padding-bottom:15%;
+    margin: auto;
+    text-align:right;
+    position:relative;
+    text-align:right;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    
+
+}
