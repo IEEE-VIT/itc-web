@@ -1,0 +1,310 @@
+body{
+    background-color: #f6f6f6;
+}
+
+.card{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+#head{
+    font-size: 6vh;
+    margin-top: 4vh;
+}
+.techloopHead, .congressHead{
+    font-size:28.5px;
+    text-transform: uppercase;
+    font-family: 'Paytone One', sans-serif;
+    background: linear-gradient(to right, #4b7cc6, #1a3c6e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#dot {
+    width: 12px;
+    height: 12px;
+    mix-blend-mode: undefined;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    /*margin-top: -30px;*/
+}
+#dot2{
+    width: 12px;
+    height: 12px;
+    mix-blend-mode: undefined;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+hr {
+    transform: rotate(90deg);
+}
+#tag{
+    height:10vh;
+    width:auto;
+}
+.ListHead2{
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 100px !important;
+    border-bottom: 2px solid #c4c2c2;
+    width:52%;
+}
+
+
+.techloopHead{
+    margin-bottom: 2.5vh;
+}
+.congressHead{
+    position: absolute;
+    z-index: -100;
+    margin-top: -1vh;
+    margin-bottom: 10vh;
+}
+
+
+.ListHead::after {
+    margin-top: 20px;
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 70px;
+    bottom: 250px;
+    left: 50%;
+    border-left: 2px solid #919a98;
+    transform: translate(-50%);
+}
+.day2::after{
+    margin-top: 50px;
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    bottom: 80px;
+    left: 50%;
+    border-left: 2px solid #919a98;
+    transform: translate(-50%);
+}
+
+.day3::after{
+    margin-top: 50px;
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    bottom: 220px;
+    left: 50%;
+    border-left: 2px solid #919a98;
+    transform: translate(-50%);
+}
+
+.row{
+    padding:3vh;
+}
+.date{
+    background: linear-gradient(270deg, #1a3c6e, #4b7cc6);
+    width:70%;
+    padding:1vh;
+    border-radius: 5px;
+    color: white;
+    font-size:3vh;
+ }
+.col-sm-12{
+    width: 100%;
+}
+#day1{
+    /*margin-top: -15vh;*/
+    width:70%; !important;
+}
+#day2, #day3{
+    margin-top: 2vh;
+}
+
+.cong1 {
+    margin-top: 0px;
+}
+
+.time{
+    color:linear-gradient(#1a3c6e, #4b7cc6);
+    font-size: 4vh !important;
+}
+.card{
+    box-shadow: 0px 0px 10px #b3b4b4;
+    /*overflow: hidden; width: 400px;*/
+}
+.content{
+    margin-top: -20px!important;
+}
+.cong{
+    margin-top: -20px;}
+}
+.itiIcon{
+    z-index: -1;
+    position: relative;
+    right: 0; !important;
+    margin-top: -200px; !important;
+    float: right !important;
+    top: 0;
+    margin-left: 10vh !important;
+    width: 100%;!important;
+}
+/*.space{*/
+    /*width:50px;*/
+    /*!*query*!*/
+/*}*/
+.card-content{
+    width:70%;
+    /*query*/
+}
+
+/*.r0{*/
+    /*padding-left:3vh !important;*/
+    /*padding-top: 0px !important;*/
+    /*padding-bottom: 0px; !important;*/
+/*}*/
+
+
+@media only screen
+and (max-device-width: 520px)
+and (min-device-width : 380px) {
+    .time {
+        font-size: 3.5vh !important;
+    }
+
+    .content {
+        font-size: 2vh !important;
+    }
+
+    .ListHead::after {
+        margin-top: 20px;
+        content:"";
+        position: absolute;
+        z-index: -1;
+        top: 50px;
+        bottom: 50px !important;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+
+    .ListHead2{
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 100px;
+        border-bottom: 2px solid #c4c2c2;
+        width:52%;
+    }
+
+
+    .row {
+        padding: 1vh;
+    }
+
+    .card-content {
+        margin-left: 4vh;
+        width: 60%;
+    }
+
+    .congressHead {
+        position: absolute;
+        /*z-index: -100;*/
+        margin-top: 5vh;
+        /*margin-left: 10px;*/
+        /*margin-bottom: 9vh;*/
+    }
+    .day3::after{
+        top: 50px;
+        bottom: 20px;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+    .congressHead{
+        margin-left: -20px;
+    }
+    #day1{
+        margin-left: 70px !important;
+    }
+    #day2{
+        margin-top: 8vh;
+    }
+
+    .ListHead2 {
+        display: none !important;
+    }
+}
+
+@media only screen
+and (max-device-width: 380px)
+and (min-device-width : 200px) {
+    .time {
+        font-size: 3vh !important;
+    }
+
+    .content {
+        font-size: 1.7vh !important;
+    }
+    #day2{
+        margin-top: 8vh;
+    }
+    .row {
+        padding: 1vh;
+        /*margin-left: 0vh;*/
+    }
+
+    .col {
+        /*margin-left: 20px !important;*/
+        margin-right: -32px !important;
+    }
+
+    .card-content {
+        margin-left: 4vh;
+        width: 50%;
+    }
+
+    .techloopHead {
+        margin-left: 5px !important;
+    }
+
+    #day3, #day2 {
+        margin-left: 40px !important;
+    }
+
+    .congressHead {
+        margin-top: 3vh;
+        margin-left: -10px;
+        margin-bottom: 4vh;
+    }
+
+    .ListHead::after {
+        top: 50px;
+        bottom: 50px;
+        left: 50% !important;
+
+    }
+
+    .day2::after {
+        top: 50px;
+        bottom: 80px;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+
+    #dot {
+        display: none !important;
+    }
+
+    .ListHead2 {
+        display: none !important;
+    }
+
+    .date {
+        font-size: 2vh !important;
+        margin-left: 50px !important;
+    }
+
+    #head {
+        margin-left: 5px;
+    }
+}

@@ -15,11 +15,13 @@
     "ejs": "~2.5.6",
     "express": "~4.15.2",
     "jimp": "^0.2.28",
-    "mongoose": "^5.1.2",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.6",
     "morgan": "~1.8.1",
     "node-captcha-generator": "0.0.1",
     "nodejs-nodemailer-outlook": "^1.0.8",
     "nodemailer": "^4.6.5",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "stream-browserify": "^2.0.1"
   }
 }
