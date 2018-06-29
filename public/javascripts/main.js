@@ -265,13 +265,4 @@ jQuery(document).ready(function($){
 		//check if mobile or desktop device
 		return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
 	}
-
-    //faq
-    $('.faq-head').click(function(){
-        var thisGrpId=$(this).parent().attr('id');
-        ($(this).find('.round')).find('img').toggleClass('is-active');
-        $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
-
-        console.log(thisGrpId);
-    });
 });

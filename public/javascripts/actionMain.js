@@ -4295,3 +4295,12 @@ Webflow.require('ix').init([{
         "triggers": []
     }
 }]);
+
+//faq
+$('.faq-head').click(function(){
+    var thisGrpId=$(this).parent().attr('id');
+    ($(this).find('.round')).find('img').toggleClass('is-active');
+    $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
+
+    console.log(thisGrpId);
+});
