@@ -163,6 +163,101 @@ hr {
     /*padding-bottom: 0px; !important;*/
 /*}*/
 
+/*IPAD PRO*/
+
+@media only screen
+and (max-device-width: 1080px)
+and (min-device-width : 800px) {
+    .time {
+        font-size: 2vh !important;
+    }
+
+    .content {
+        font-size: 1.5vh !important;
+    }
+
+    .ListHead::after {
+        margin-top: 20px;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 70px;
+        bottom: 240px !important;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+
+    .ListHead2 {
+        position: absolute;
+        margin-left: 200px;
+        margin-top: 100px;
+        border-bottom: 2px solid #c4c2c2;
+        width: 52%;
+    }
+
+    .row {
+        padding: 0.4vh;
+    }
+
+    .card-content {
+        margin-left: 2vh;
+        width: 60%;
+    }
+
+    .congressHead {
+        position: absolute;
+        font-size: 2vh;
+        /*z-index: -100;*/
+        margin-top: 5vh;
+        /*margin-left: 10px;*/
+        /*margin-bottom: 9vh;*/
+    }
+
+    .day3::after {
+        top: 50px;
+        bottom: 170px;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+
+    .congressHead {
+        margin-top: 3px;
+        margin-left: -20px;
+    }
+    #day1 {
+        margin-left: 60px !important;
+    }
+
+    #day2 {
+        margin-top: 3.4vh;
+    }
+    #day3 {
+        margin-top: 3.4vh;
+    }
+
+    #day1, #day2, #day3 {
+        font-size: 1.4vh;
+        width: 70%;
+    }
+    .timelineIcon{
+        height:4vh !important;
+        vertical-align: center;
+        position:absolute;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:auto;
+    }
+
+    /*.ListHead2 {*/
+        /*display: none !important;*/
+    /*}*/
+    #head{
+        font-size: 4vh;
+    }
+}
 
 @media only screen
 and (max-device-width: 520px)

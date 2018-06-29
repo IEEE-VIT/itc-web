@@ -431,7 +431,7 @@ label {
 
 @media screen and (max-width:1270px) {
   .w-container {
-    max-width: 728px
+    max-width: 728px;
   }
   .w-hidden-main {
     display: inherit !important
@@ -542,7 +542,8 @@ label {
 
 @media screen and (max-width:479px) {
   .w-container {
-    max-width: none
+    max-width: none;
+    margin-top:-10px;
   }
   .w-hidden-main {
     display: inherit !important
@@ -1034,8 +1035,8 @@ blockquote {
 
 .content-section {
   position: relative;
-  padding-top: 3%;
-  padding-bottom: 7%;
+  padding-top: 2em;
+  padding-bottom: 2em;
   background-color: #fff;
 }
 .aboutus-section{
@@ -3224,4 +3225,109 @@ a:hover, a:focus, a:active {
   .fancy-button2{
     margin-left:0;
   }
+}
+
+/*faq section*/
+#faq{
+    margin-top: 0px !important;
+    padding-top: 0% !important;
+    padding-bottom: 4% !important;
+}
+.faq-group {
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: linear-gradient(150deg, #4b7cc6, #1a3c6e);       min-height: 64px;
+    border-radius: 32px;
+    color: #fff;
+    transition: box-shadow .6s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.faq-head {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 26px 36px;
+    border-radius: 100px;
+    color: #fff;
+    position: relative;
+    transition: transform .6s ease;sss
+}
+
+.faq-head:hover{
+    cursor: pointer;
+
+}
+
+.faq-head h3 {
+    display: block;
+    font-size: 12px !important;
+    margin: 0px !important;
+    padding: 0px!important;
+}
+
+.link {
+    font-size: 12px !important;
+    line-height: 1.333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-decoration: none !important;
+}
+
+.faq-body {
+    display: none;
+    align-items: center;
+    padding: 20px 16px 5px 16px;
+    color: #fff;
+    position: relative;
+}
+
+@media (min-width:768px) {
+    .faq-body {
+        padding: 24px 36px
+    }
+}
+.ques{
+    font-style: italic;
+    font-size: 18px;
+    font-family: inherit;
+    letter-spacing: 0;
+    line-height: 1.333;
+    padding-bottom: 10px !important;
+    text-align: justify;
+}
+
+.ans{
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.round{
+    background: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    float: right !important;
+    right: 10px;
+    display: block;
+    position: absolute;
+}
+.round img{
+    top: 12px;
+    right: 12px;
+    display: block;
+    position: absolute;
+    transition: transform .6s ease;
+    width: 26px;
+    height: 26px;
+}
+.is-active, .faq-head:hover img {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Safari */
+    transform: rotate(45deg);
 }
