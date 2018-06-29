@@ -431,7 +431,7 @@ label {
 
 @media screen and (max-width:1270px) {
   .w-container {
-    max-width: 728px
+    max-width: 728px;
   }
   .w-hidden-main {
     display: inherit !important
@@ -542,7 +542,8 @@ label {
 
 @media screen and (max-width:479px) {
   .w-container {
-    max-width: none
+    max-width: none;
+    margin-top:-10px;
   }
   .w-hidden-main {
     display: inherit !important
@@ -1034,8 +1035,8 @@ blockquote {
 
 .content-section {
   position: relative;
-  padding-top: 3%;
-  padding-bottom: 7%;
+  padding-top: 2em;
+  padding-bottom: 2em;
   background-color: #fff;
 }
 .aboutus-section{
@@ -3297,6 +3298,7 @@ a:hover, a:focus, a:active {
     letter-spacing: 0;
     line-height: 1.333;
     padding-bottom: 10px !important;
+    text-align: justify;
 }
 
 .ans{

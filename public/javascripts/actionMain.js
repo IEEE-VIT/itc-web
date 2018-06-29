@@ -4297,10 +4297,14 @@ Webflow.require('ix').init([{
 }]);
 
 //faq
+var prevGrpId = -1;
 $('.faq-head').click(function(){
     var thisGrpId=$(this).parent().attr('id');
+    if(prevGrpId!==-1 && prevGrpId.toString()!==thisGrpId.toString()) {
+        $('#' + prevGrpId).find('.faq-body').slideToggle(250, 'swing');
+        ($('#' + prevGrpId).find('.round')).find('img').toggleClass('is-active');
+    }
+    prevGrpId = thisGrpId;
     ($(this).find('.round')).find('img').toggleClass('is-active');
     $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
-
-    console.log(thisGrpId);
 });
