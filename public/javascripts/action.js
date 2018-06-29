@@ -20,6 +20,7 @@ $(document).ready(function($) {
     $('#generalOne1-error').hide();
     $('#generalTwo-error').hide();
     $('#generalTwo1-error').hide();
+    $('#session-message').hide();
 
     $('#ieee-details').hide();
     $('#ieee-radio-1').click(function(){
@@ -38,6 +39,21 @@ $(function () {
     var typingTimer;                //timer identifier
     var doneTypingInterval = 500;  //time in ms (5 seconds)
 
+    var isMLChecked = $('#session-radio-3').prop('checked');
+    if(isMLChecked){
+        $('#session-message').show();
+    }
+
+    $('input:radio[name="session"]').change(
+        function(){
+            var isMLChecked = $('#session-radio-3').prop('checked');
+            if(isMLChecked){
+                $('#session-message').show();
+            }
+            else{
+                $('#session-message').hide();
+            }
+        });
     $('#nameInput').keyup(function(){
         $('#name-error').hide();
         $('#name1-error').hide();
