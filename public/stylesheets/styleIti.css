@@ -363,6 +363,23 @@ and (min-device-width : 800px) {
 }
 
 @media only screen
+and (max-device-width: 800px)
+and (min-device-width : 750px){
+    .techloopHead{
+        font-size: 2vh;
+    }
+    #day1{
+        margin-top: 5px;
+    }
+    .congressHead{
+        margin-bottom: -10px;
+        font-size: 2vh;
+    }
+
+
+}
+
+@media only screen
 and (max-device-width: 520px)
 and (min-device-width : 380px) {
     .date{
