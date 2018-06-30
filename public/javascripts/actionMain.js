@@ -4297,11 +4297,23 @@ Webflow.require('ix').init([{
 }]);
 
 //faq
-var prevGrpId = [];
+var allFAQ = ["faq1","faq2","faq3","faq4","faq5"];
 $('.faq-head').click(function(){
     var thisGrpId=$(this).parent().attr('id');
-    $('#'+thisGrpId).find('.round').find('img').toggleClass('is-active');
-    $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
-    console.log($('#'+"faq5").find('.faq-body').is(":hidden"));
-    console.log(thisGrpId);
+    for(var i=0;i<allFAQ.length;i++){
+        if(allFAQ[i]===thisGrpId){
+            $('#'+thisGrpId).find('.round').find('img').toggleClass('is-active');
+            $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
+        }
+        else{
+            if(!$('#'+allFAQ[i]).find('.faq-body').is(":hidden")){
+                $('#'+allFAQ[i]).find('.round').find('img').toggleClass('is-active');
+                $('#'+allFAQ[i]).find('.faq-body').slideToggle(500,'swing');
+            }
+        }
+    }
+    // $('#'+thisGrpId).find('.round').find('img').toggleClass('is-active');
+    // $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
+    // console.log($('#'+"faq5").find('.faq-body').is(":hidden"));
+    // console.log(thisGrpId);
 });
