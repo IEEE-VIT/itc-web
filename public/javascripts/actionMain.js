@@ -4297,14 +4297,23 @@ Webflow.require('ix').init([{
 }]);
 
 //faq
-var prevGrpId = -1;
+var allFAQ = ["faq1","faq2","faq3","faq4","faq5"];
 $('.faq-head').click(function(){
     var thisGrpId=$(this).parent().attr('id');
-    if(prevGrpId!==-1 && prevGrpId.toString()!==thisGrpId.toString()) {
-        $('#' + prevGrpId).find('.faq-body').slideToggle(250, 'swing');
-        ($('#' + prevGrpId).find('.round')).find('img').toggleClass('is-active');
+    for(var i=0;i<allFAQ.length;i++){
+        if(allFAQ[i]===thisGrpId){
+            $('#'+thisGrpId).find('.round').find('img').toggleClass('is-active');
+            $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
+        }
+        else{
+            if(!$('#'+allFAQ[i]).find('.faq-body').is(":hidden")){
+                $('#'+allFAQ[i]).find('.round').find('img').toggleClass('is-active');
+                $('#'+allFAQ[i]).find('.faq-body').slideToggle(500,'swing');
+            }
+        }
     }
-    prevGrpId = thisGrpId;
-    ($(this).find('.round')).find('img').toggleClass('is-active');
-    $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
+    // $('#'+thisGrpId).find('.round').find('img').toggleClass('is-active');
+    // $('#'+thisGrpId).find('.faq-body').slideToggle(500,'swing');
+    // console.log($('#'+"faq5").find('.faq-body').is(":hidden"));
+    // console.log(thisGrpId);
 });

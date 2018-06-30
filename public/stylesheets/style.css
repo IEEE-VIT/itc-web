@@ -3326,8 +3326,16 @@ a:hover, a:focus, a:active {
     width: 26px;
     height: 26px;
 }
-.is-active, .faq-head:hover img {
+.is-active, .faq-head:active img {
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Safari */
     transform: rotate(45deg);
+}
+
+@media (min-width:1200px) {
+  .is-active, .faq-head:hover img {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Safari */
+    transform: rotate(45deg);
+  }
 }
