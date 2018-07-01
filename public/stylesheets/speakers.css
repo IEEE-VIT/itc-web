@@ -1,0 +1,32 @@
+#speakers{
+  background-image: -webkit-linear-gradient(150deg, rgb(75, 124, 198), rgb(26, 60, 110));
+  background-image: linear-gradient(150deg, rgb(75, 124, 198), rgb(26, 60, 110));
+  padding-top: 5vh;
+  padding-bottom: 12vh;
+}
+
+#speakers h2{
+  color: white;
+}
+
+.speaker-img{
+  border-radius: 50%;
+
+  width: 50%;
+  margin-left: 25%;
+}
+
+.speaker-name{
+  text-align: center;
+  color: white;
+}
+
+.speaker-designation{
+  color: white;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.speaker-instance{
+  margin-top: 5vh;
+}
