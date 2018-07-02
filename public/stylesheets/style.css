@@ -2446,8 +2446,11 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding-bottom: 20%;
   }
   .content-section {
-    padding-top: 9%;
-    padding-bottom: 9%;
+    padding : 10% 0 10% 0;
+  }
+  .sub-section{
+    padding : 10% 0 10% 0;
+    margin-bottom : 5%;
   }
   .aboutus-section{
     padding-top: 9%;
@@ -2792,8 +2795,11 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5% 0 0 0;
 }
 .light-headings-text{
+  padding : 0 0 5% 0;
   color : #fff;
-  text-align : center;
+  /*text-align : center;*/
+  /*font-size : .5in;*/
+  /*font-weight : 900;*/
 }
 .text-congress-heading{
     color : #000;
