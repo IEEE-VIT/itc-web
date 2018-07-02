@@ -2780,6 +2780,9 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   color : #000;
   padding : 23 0px;
 }
+.techloop-content{
+    padding : 4%;
+}
 .text-techloop-bold{
   text-align : center;
   color : #000;
