@@ -30,95 +30,145 @@ router.get('/wegotyou',(req,res)=>{
 });
 
 router.post('/wegotyou', (req, res)=>{
-  participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp:-1}).exec((err,users)=>{
-    if(err){
-        console.log(err);
-      res.send({code : 1, users : 'Something is not right :|'})
-    }else{
-      res.send({code : 0, users : users})
-      }
-  })
+    var cookie = req.cookies[process.env.COOKIE_NAME];
+    var uname = req.cookies[process.env.USER_COOKIE];
+    var unameChk = uname !== undefined && uname === process.env.USER_NAME ? 0 : 1;
+    var code = cookie !== undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    if(code===1 || unameChk===1){
+        res.send({code : 1, users : 'Something is not right :|'})
+    }
+    else {
+        participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+            if (err) {
+                console.log(err);
+                res.send({code: 1, users: 'Something is not right :|'})
+            } else {
+                res.send({code: 0, users: users})
+            }
+        });
+    }
 });
 
 router.post('/mailedUpdate/',verifyIeeeMember, (req, res)=>{
     // console.log("hkjnijw");
-    participant.update({email : req.body.email},{whoMailed : req.body.whoMailed},(err,data)=> {
-        if(err)
-            throw err;
-        else
-        {
-            participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
-                if(err) {
-                    res.send({code: 1, users: 'Something is not right :|'})
-                }else{
-                    // console.log(users);
-                    res.send({code: 0, users: users})
-                }
-            })
-        }
-    });
+    var cookie = req.cookies[process.env.COOKIE_NAME];
+    var uname = req.cookies[process.env.USER_COOKIE];
+    var unameChk = uname !== undefined && uname === process.env.USER_NAME ? 0 : 1;
+    var code = cookie !== undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    if(code===1 || unameChk===1){
+        res.send({code : 1, users : 'Something is not right :|'})
+    }
+    else {
+        participant.update({email: req.body.email}, {whoMailed: req.body.whoMailed}, (err, data) => {
+            if (err)
+                throw err;
+            else {
+                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                    if (err) {
+                        res.send({code: 1, users: 'Something is not right :|'})
+                    } else {
+                        // console.log(users);
+                        res.send({code: 0, users: users})
+                    }
+                })
+            }
+        });
+    }
 });
 
 router.post('/update',verifyIeeeMember, (req, res)=>{
-    participant.update({email : req.body.email},{emailSent : true},(err,data)=> {
-        if(err)
-            throw err;
-        else
-        {
-            participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
-                if(err) {
-                    res.send({code: 1, users: 'Something is not right :|'})
-                }else{
-                    res.send({code: 0, users: users})
-                }
-            })
-        }
-    });
+    var cookie = req.cookies[process.env.COOKIE_NAME];
+    var uname = req.cookies[process.env.USER_COOKIE];
+    var unameChk = uname !== undefined && uname === process.env.USER_NAME ? 0 : 1;
+    var code = cookie !== undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    if(code===1 || unameChk===1){
+        res.send({code : 1, users : 'Something is not right :|'})
+    }
+    else {
+        participant.update({email: req.body.email}, {emailSent: true}, (err, data) => {
+            if (err)
+                throw err;
+            else {
+                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                    if (err) {
+                        res.send({code: 1, users: 'Something is not right :|'})
+                    } else {
+                        res.send({code: 0, users: users})
+                    }
+                })
+            }
+        });
+    }
 });
 
 router.post('/invalidEntry',verifyIeeeMember, (req, res)=> {
-    participant.update({email: req.body.email}, {invalidEmail: true}, (err, data) => {
-    if(err)
-    throw err;
-else
-{
-    participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
-        if(err) {
-            res.send({code: 1, users: 'Something is not right :|'})
-        }else{
-            res.send({code: 0, users: users})
-                }
-            })
-        }
-    });
+    var cookie = req.cookies[process.env.COOKIE_NAME];
+    var uname = req.cookies[process.env.USER_COOKIE];
+    var unameChk = uname !== undefined && uname === process.env.USER_NAME ? 0 : 1;
+    var code = cookie !== undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    if(code===1 || unameChk===1){
+        res.send({code : 1, users : 'Something is not right :|'})
+    }
+    else {
+        participant.update({email: req.body.email}, {invalidEmail: true}, (err, data) => {
+            if (err)
+                throw err;
+            else {
+                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                    if (err) {
+                        res.send({code: 1, users: 'Something is not right :|'})
+                    } else {
+                        res.send({code: 0, users: users})
+                    }
+                });
+            }
+        });
+    }
 });
 
 router.post('/resetStatus',verifyIeeeMember, (req, res)=>{
-    participant.update({email : req.body.email},{invalidEmail : false,emailSent : false},(err,data)=> {
-    if(err)
-        throw err;
-    else
-    {
-    participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
-        if(err) {
-            res.send({code: 1, users: 'Something is not right :|'})
-        }else{
-            res.send({code: 0, users: users})
-                }
-            })
-        }
-    });
+    var cookie = req.cookies[process.env.COOKIE_NAME];
+    var uname = req.cookies[process.env.USER_COOKIE];
+    var unameChk = uname !== undefined && uname === process.env.USER_NAME ? 0 : 1;
+    var code = cookie !== undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    if(code===1 || unameChk===1){
+        res.send({code : 1, users : 'Something is not right :|'})
+    }
+    else {
+        participant.update({email: req.body.email}, {invalidEmail: false, emailSent: false}, (err, data) => {
+            if (err)
+                console.log(err);
+            else {
+                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                    if (err) {
+                        res.send({code: 1, users: 'Something is not right :|'})
+                    } else {
+                        res.send({code: 0, users: users})
+                    }
+                })
+            }
+        });
+    }
 });
 
 router.post('/verifyPassword', (req, res)=>{
-    if(req.query.p === process.env.USER_PASSWORD){
-        res.cookie(process.env.COOKIE_NAME,
-            process.env.COOKIE_VALUE, {
-                maxAge: 86400000 // for 1 day
-        });
-        res.send({code : 0, message : 'Access granted !!'});
-    }else{
-        res.send({code : 1, message : 'Sorry access denied!!'});
+    var cookie = req.cookies[process.env.COOKIE_NAME];
+    var uname = req.cookies[process.env.USER_COOKIE];
+    var unameChk = uname !== undefined && uname === process.env.USER_NAME ? 0 : 1;
+    var code = cookie !== undefined && cookie === process.env.COOKIE_VALUE ? 0 : 1;
+    if(code===1 || unameChk===1){
+        res.send({code : 1, users : 'Something is not right :|'})
+    }
+    else {
+        if (req.query.p === process.env.USER_PASSWORD) {
+            res.cookie(process.env.COOKIE_NAME,
+                process.env.COOKIE_VALUE, {
+                    maxAge: 86400000 // for 1 day
+                });
+            res.send({code: 0, message: 'Access granted !!'});
+        } else {
+            res.send({code: 1, message: 'Sorry access denied!!'});
+        }
     }
 });
 
