@@ -38,7 +38,7 @@ router.post('/wegotyou', (req, res)=>{
         res.send({code : 1, users : 'Something is not right :|'})
     }
     else {
-        participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+        participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
             if (err) {
                 console.log(err);
                 res.send({code: 1, users: 'Something is not right :|'})
@@ -63,7 +63,7 @@ router.post('/mailedUpdate/',verifyIeeeMember, (req, res)=>{
             if (err)
                 throw err;
             else {
-                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
                     if (err) {
                         res.send({code: 1, users: 'Something is not right :|'})
                     } else {
@@ -89,7 +89,7 @@ router.post('/update',verifyIeeeMember, (req, res)=>{
             if (err)
                 throw err;
             else {
-                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
                     if (err) {
                         res.send({code: 1, users: 'Something is not right :|'})
                     } else {
@@ -114,7 +114,7 @@ router.post('/invalidEntry',verifyIeeeMember, (req, res)=> {
             if (err)
                 throw err;
             else {
-                participant.find({}).select('name timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
+                participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
                     if (err) {
                         res.send({code: 1, users: 'Something is not right :|'})
                     } else {
