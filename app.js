@@ -11,7 +11,7 @@ var ddos = new Ddos({burst:10, limit:50,errormessage:'Maximum number of requests
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'});
 
 var app = express();
 

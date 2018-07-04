@@ -1,0 +1,75 @@
+<html>
+<head>
+    <link href="../stylesheets/ieeeMemCheck.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container login-form">
+    <h2 class="login-title">- Restricted Access, only for IEEE Members -</h2>
+    <div class="alert alert-success" id="successMsg"><span id="successText"></span>
+    </div>
+    <div class="alert alert-danger" id="errMsg"><span id="errText"></span>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form id="loginForm">
+                <div class="input-group">
+                    <div class="input-group login-userinput">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input id="txtUser" type="text" class="form-control" name="username" placeholder="Username">
+                    </div>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input  id="txtPassword" type="password" class="form-control" name="password" placeholder="Password">
+                    <span id="showPassword" class="input-group-btn">
+          </span>
+                </div>
+                <button class="btn btn-primary btn-block login-button" id="submitBtn"><i class="fa fa-sign-in"></i> Login</button>
+                <div class="checkbox login-options">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        $('#successMsg').hide();
+        $('#errMsg').hide();
+
+        // References to all the element we will need.
+        var submitBtn = document.querySelector('#submitBtn');
+        submitBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            $('#errMsg').hide();
+            $('#errText').text("");
+            $.ajax({
+                type: "POST",
+                url: '/users/ieeeMemCheck',
+                data: $("#loginForm").serialize(), // serializes the form's elements.
+                success: function (data) {
+                    console.log(data);
+                    if(!data || data.code===undefined || data.message===undefined){
+                        $('#errMsg').show();
+                        $('#errText').text("Empty reply from server");
+                    }
+                    else if(data.code===0){
+                        $('#errMsg').show();
+                        $('#errText').text(data.message);
+                    }
+                    else if(data.code===1){
+                        $('#successMsg').show();
+                        $('#successText').text(data.message);
+                        window.location.replace("/users/wegotyou");
+                    }
+                    else{
+                        $('#errMsg').show();
+                        $('#errText').text("Incorrect reply from server");
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</html>
