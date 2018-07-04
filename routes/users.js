@@ -61,7 +61,7 @@ router.post('/mailedUpdate/',verifyIeeeMember, (req, res)=>{
     else {
         participant.update({email: req.body.email}, {whoMailed: req.body.whoMailed}, (err, data) => {
             if (err)
-                throw err;
+                console.log(err);
             else {
                 participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
                     if (err) {
@@ -87,7 +87,7 @@ router.post('/update',verifyIeeeMember, (req, res)=>{
     else {
         participant.update({email: req.body.email}, {emailSent: true}, (err, data) => {
             if (err)
-                throw err;
+                console.log(err);
             else {
                 participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
                     if (err) {
@@ -112,7 +112,7 @@ router.post('/invalidEntry',verifyIeeeMember, (req, res)=> {
     else {
         participant.update({email: req.body.email}, {invalidEmail: true}, (err, data) => {
             if (err)
-                throw err;
+                console.log(err);
             else {
                 participant.find({}).select('name email contact timestamp ieeeSection emailSent invalidEmail whoMailed institute').sort({timestamp: -1}).exec((err, users) => {
                     if (err) {
