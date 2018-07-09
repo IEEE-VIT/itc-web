@@ -3188,7 +3188,7 @@ a:hover, a:focus, a:active {
   content: '' !important;
   z-index: -1 !important;
   height: 40px;
-  border-radius: 2em !important;
+  border-radius: 1.5em !important;
   -webkit-filter: blur(14px) brightness(0.9) !important;
   filter: blur(14px) brightness(0.9) !important;
   -webkit-transform-style: preserve-3d !important;
@@ -3349,5 +3349,8 @@ a:hover, a:focus, a:active {
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Safari */
     transform: rotate(45deg);
+  }
+  .btn{
+    margin-top:-10px;
   }
 }
