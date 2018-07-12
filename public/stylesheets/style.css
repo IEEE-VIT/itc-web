@@ -2794,8 +2794,17 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5%;
     color : #000;
 }
+.track-icon>img{
+    height : 120px;
+}
 .domain-headline{
     padding : 5% 0 0 0;
+}
+.track-description{
+    text-align: left;
+    background-color: #fff;
+    margin : 5% 0 0 0;
+    padding : 3% 0;
 }
 .light-headings-text{
   padding : 0 0 5% 0;
