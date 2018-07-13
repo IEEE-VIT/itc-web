@@ -2801,7 +2801,8 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5% 0 0 0;
 }
 .track-description{
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
     background-color: #fff;
     margin : 5% 0 0 0;
     padding : 3% 0;
