@@ -4319,8 +4319,8 @@ $('.faq-head').click(function(){
 });
 
 $(window).scroll(function() {
-    if(screen.width<700) {
-        if ($(this).scrollTop() > 400) { //use `this`, not `document`
+    // if(screen.width<700) {
+        if ($(this).scrollTop() > screen.height*0.3) { //use `this`, not `document`
             $('.label-container').css({
                 'visibility': 'hidden'
             });
@@ -4330,5 +4330,5 @@ $(window).scroll(function() {
                 'visibility': 'visible'
             });
         }
-    }
+    // }
 });
