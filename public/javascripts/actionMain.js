@@ -4317,3 +4317,18 @@ $('.faq-head').click(function(){
     // console.log($('#'+"faq5").find('.faq-body').is(":hidden"));
     // console.log(thisGrpId);
 });
+
+$(window).scroll(function() {
+    if(screen.width<700) {
+        if ($(this).scrollTop() > 400) { //use `this`, not `document`
+            $('.label-container').css({
+                'visibility': 'hidden'
+            });
+        }
+        else {
+            $('.label-container').css({
+                'visibility': 'visible'
+            });
+        }
+    }
+});

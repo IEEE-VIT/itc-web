@@ -51,6 +51,8 @@
     </script>
 </head>
 
+<!-- Code begins here -->
+
 <body data-ix="full-opacity-on-load" class="body">
 <div data-collapse="medium" data-animation="default" data-duration="400" data-ix="display-none-on-load-fixed-navbar" class="fixed-navbar w-hidden-small w-nav">
     <div class="content-wrapper w-container">
@@ -285,7 +287,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="text-techloop">
                         Techloop is an IEEE initiative which began with a simple objective: Students Teaching Students. Techloop provides an environment for students to learn from other students by the means of hands-on projects and interactive sessions. As the tagline, ‘stay in the loop’ suggests, Techloop truly keeps the students informed about all the happenings and developments in the technological industry. ITC presents three parallel techloop tracks: <strong>Machine Learning</strong>,<strong> Internet Of Things</strong> and <strong>Android Application Development. </strong>
-                        <a target="_blank" href="http://ieeevit.com/#services">Click here to read more about techloop&nbsp;<i class="fas fa-share"></i>
+                        <a onclick='window.open("http://ieeevit.com/#services");return false;'>Click here to read more about techloop&nbsp;<i class="fas fa-share"></i>
                         </a>
                         <br><br>
                     </div>
@@ -396,11 +398,11 @@
       <h2 class="speaker-name">Aharsh MS</h2>
       <h4 class="speaker-designation">Co-Founder, Accubits Technologies</h4>
     </div>
-      <!--<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 speaker-instance">-->
-          <!--<img class="speaker-img img-circle" src="./images/chetana_thakur.jpg" alt="">-->
-          <!--<h2 class="speaker-name">Chetana Thakur</h2>-->
-          <!--<h4 class="speaker-designation">Director and Delivery Executive- Blockchain, IBM</h4>-->
-      <!--</div>-->
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 speaker-instance">
+          <img class="speaker-img img-circle" src="./images/chetana_thakur.jpg" alt="">
+          <h2 class="speaker-name">Chetana Thakur</h2>
+          <h4 class="speaker-designation">Director and Delivery Executive- Blockchain, IBM</h4>
+      </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 speaker-instance">
       <img class="speaker-img" src="./images/DipanjanS.jpg" alt="">
       <h2 class="speaker-name">Dipanjan Sarkar</h2>
@@ -770,6 +772,15 @@
         </div>
     </div>
 </div>
+
+<a onclick='window.open("/itc_brochure.pdf");return false;' class="float">
+    <i class="fa fa-download my-float"></i>
+</a>
+<div class="label-container">
+    <div class="label-text">Brochure</div>
+    <!--<i class="fa fa-play label-arrow"></i>-->
+</div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="./javascripts/actionMain.js" type="text/javascript"></script>
 <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
