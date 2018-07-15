@@ -4332,3 +4332,17 @@ $(window).scroll(function() {
         }
     // }
 });
+
+$(document).ready(function(){
+    $(".float").hover(function(){
+        console.log("HEREE");
+        $('.label-container').css({
+            'visibility': 'visible'
+        });
+    }, function(){
+        $(this).css("background-color", "#06C;");
+        $('.label-container').css({
+            'visibility': 'hidden'
+        });
+    });
+});

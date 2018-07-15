@@ -3413,7 +3413,7 @@ a:hover, a:focus, a:active {
   /*transition: visibility 0s, opacity 0.5s ease;*/
 /*}*/
 
-a.float:hover + div.label-container{
-  visibility: visible;
-  opacity: 1;
-}
+/*a.float:hover + div.label-container{*/
+  /*visibility: visible;*/
+  /*opacity: 1;*/
+/*}*/
