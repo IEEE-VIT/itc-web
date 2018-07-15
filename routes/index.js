@@ -9,6 +9,7 @@ var cookieData = require('../models/cookies.js');
 var check = require('../utilities/regex');
 var nodemailer = require('nodemailer');
 var fs = require('fs');
+var path = require('path');
 
 function randomString(length, chars) {
     var result = '';
@@ -480,8 +481,7 @@ router.get('/register', function(req, res, next) {
 
 
 router.get('/itc_brochure.pdf', function(req, res, next) {
-
-    var tempFile="../bin/ITC_Brochure.pdf";
+    var tempFile= path.dirname(require.main.filename).toString() + "/ITC_Brochure.pdf";
     fs.readFile(tempFile, function (err,data){
         res.contentType("application/pdf");
         res.send(data);
