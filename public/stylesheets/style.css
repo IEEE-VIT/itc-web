@@ -3420,6 +3420,9 @@ a:hover, a:focus, a:active {
 .ieee_pses{
   margin : -5px 0 0 0;
 }
+.alert-iot{
+  padding : 5px;
+}
 
 @media (max-width: 600px){
   .ieee_pses{
