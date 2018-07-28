@@ -99,7 +99,10 @@ hr {
 }
 
 .row{
-    padding:3vh;
+    padding-left: 5vh;
+    padding-top:3vh;
+    padding-right:3vh;
+    padding-bottom:3vh;
 }
 .date{
     background: linear-gradient(270deg, #1a3c6e, #4b7cc6);
@@ -153,7 +156,7 @@ hr {
     /*!*query*!*/
 /*}*/
 .card-content{
-    width:70%;
+    width:65%;
     /*query*/
 }
 
