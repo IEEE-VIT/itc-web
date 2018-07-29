@@ -1050,8 +1050,6 @@ blockquote {
   background: #ddd;
   padding-top: 7%;
   padding-bottom: 10%;
-  padding-left: 9%;
-  padding-right: 5%;
   background :  linear-gradient(150deg, #4b7cc6, #1a3c6e);
 }
 
@@ -2693,6 +2691,13 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   letter-spacing: 0.6px;
   color:#fff;
   text-align: center;
+}
+
+@media screen and (min-width: 967px){
+.about-padding{
+  padding-left: 9%;
+  padding-right: 5%;
+}
 }
 
 .aboutus-text{
