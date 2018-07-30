@@ -488,4 +488,12 @@ router.get('/itc_brochure.pdf', function(req, res, next) {
     });
 });
 
+router.get('/iot_componentsList.pdf', function(req, res, next) {
+    var tempFile= path.dirname(require.main.filename).toString() + "/IOT_components.pdf";
+    fs.readFile(tempFile, function (err,data){
+        res.contentType("application/pdf");
+        res.send(data);
+    });
+});
+
 module.exports = router;
