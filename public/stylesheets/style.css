@@ -899,7 +899,7 @@ blockquote {
 .nav-link {
   position: relative;
   overflow: hidden;
-  padding: 32px 8px 25px;
+  padding: 21px 20px 20px;
   -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
@@ -933,9 +933,15 @@ blockquote {
   opacity: 0.95;
 }
 
+@media screen and (min-width: 967px) {
+  .mobile-brand {
+    padding-top: 10px;
+  }
+}
+
 .brand {
   margin-right: 15px;
-  padding-top: 30px;
+  padding-top: 13px;
   padding-bottom: 25px;
   -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
