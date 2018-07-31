@@ -961,7 +961,7 @@ blockquote {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 86px;
+  height: 75px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1094,6 +1094,11 @@ blockquote {
   position: relative;
   z-index: 1;
   background-color: #1488cc;
+}
+.underline.white {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
 }
 
 .underline.no-bottom-border {
@@ -1591,7 +1596,7 @@ blockquote {
   top: 0px;
   right: 0px;
   display: block;
-  height: 86px;
+  height: 70px;
   background-color: #fff;
 }
 
@@ -2182,6 +2187,9 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   .underline.crimson {
     margin-bottom: 2%;
   }
+  .underline.white {
+    margin-bottom: 2%;
+  }
   .cursive-text {
     font-size: 3.4vw;
     line-height: 1.55em;
@@ -2654,7 +2662,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   font-stretch: normal;
   line-height: 1.09;
   letter-spacing: 0.6px;
-  color:#000;
+  color: #1b1b1b;
   display: table-cell;
   vertical-align: middle;
 }
@@ -2761,6 +2769,10 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     align:center;
     max-width:100px;
   }
+  .track-icon{
+    height:60px;
+    margin-bottom:-40px;
+  }
 }
 
 .col_one_third {
@@ -2794,7 +2806,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   padding : 23 0px;
 }
 .techloop-content{
-    padding : 4%;
+    padding : 10% 4% 4% 4%;
 }
 .text-techloop-bold{
   text-align : center;
@@ -2807,11 +2819,16 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5%;
     color : #000;
 }
+.track-icon{
+  height : 120px;
+}
 .track-icon>img{
-    height : 120px;
+    margin-top:20px;
+    height : 60%;
 }
 .domain-headline{
-    padding : 5% 0 0 0;
+    margin-top:25px;
+    text-align : left;
 }
 .track-description{
     text-align: justify;
@@ -3387,7 +3404,7 @@ a:hover, a:focus, a:active {
 }
 
 .label-text{
-  color:#FFF;
+  color:#fff;
   background:rgba(51,51,51,0.5);
   display:table-cell;
   vertical-align:middle;
@@ -3398,7 +3415,7 @@ a:hover, a:focus, a:active {
 .label-arrow{
   display:table-cell;
   vertical-align: top;
-  color:#333;
+  color:#4c78bc;
   opacity:0.5;
 }
 
@@ -3408,14 +3425,14 @@ a:hover, a:focus, a:active {
   height:60px;
   bottom:40px;
   right:40px;
-  background-color:#06C;
-  color:#FFF;
+  background-color: #4b7cc6;
+  color:#fff;
   border-radius:50px;
   text-align:center;
-  box-shadow: 2px 2px 3px #999;
+  box-shadow:  5px 5px 5px rgba(27, 27, 27, 0.75);
 }
-
 .my-float{
+  color : #fff;
   font-size:24px;
   margin-top:18px;
 }
@@ -3440,5 +3457,9 @@ a:hover, a:focus, a:active {
 @media (max-width: 600px){
   .ieee_pses{
     margin : 15px 0 0 0;
+  }
+  .domain-headline{
+    padding : 5% 0 0 0;
+    text-align : center;
   }
 }
