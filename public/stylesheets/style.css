@@ -933,12 +933,6 @@ blockquote {
   opacity: 0.95;
 }
 
-@media screen and (min-width: 967px) {
-  .mobile-brand {
-    padding-top: 10px;
-  }
-}
-
 .brand {
   margin-right: 15px;
   padding-top: 13px;
