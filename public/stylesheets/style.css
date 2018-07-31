@@ -2763,6 +2763,10 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     align:center;
     max-width:100px;
   }
+  .track-icon{
+    height:60px;
+    margin-bottom:-40px;
+  }
 }
 
 .col_one_third {
@@ -2809,12 +2813,16 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5%;
     color : #000;
 }
+.track-icon{
+  height : 120px;
+}
 .track-icon>img{
-    height : 120px;
+    margin-top:20px;
+    height : 60%;
 }
 .domain-headline{
-    padding : 5% 0 0 0;
-  text-align : left;
+    margin-top:25px;
+    text-align : left;
 }
 .track-description{
     text-align: justify;
