@@ -6,12 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Ddos = require('ddos')
-var ddos = new Ddos({burst:10, limit:50,errormessage:'Maximum number of requests exceeded from your system, please wait to regain access'})
+var ddos = new Ddos({burst:10, limit:100,errormessage:'Maximum number of requests exceeded from your system, please wait to regain access'})
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-require('dotenv').config();
+require('dotenv').config({path: __dirname + '/.env'});
 
 var app = express();
 

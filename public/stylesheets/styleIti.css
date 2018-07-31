@@ -116,6 +116,10 @@ hr {
     /*margin-top: -15vh;*/
     width:70%; !important;
 }
+
+.congress-container {
+    margin : 0px;
+}
 #day2, #day3{
     margin-top: 2vh;
 }
@@ -163,10 +167,25 @@ hr {
     /*padding-bottom: 0px; !important;*/
 /*}*/
 
+/*pc only RESPONSIVENESS*/
+@media only screen
+and (min-device-width : 1200px) {
+.row{
+    padding-left: 5vh;
+    padding-top:3vh;
+    padding-right:3vh;
+    padding-bottom:3vh;
+}
+.card-content{
+    width:65%;
+    /*query*/}
+
+}
+
 /*IPAD RESPONSIVENESS*/
 @media only screen
 and (max-device-width: 780px)
-and (min-device-width : 700px) {
+and (min-device-width : 1200px) {
     .time {
         font-size: 2vh !important;
 

@@ -955,7 +955,7 @@ blockquote {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 86px;
+  height: 20px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -1088,6 +1088,11 @@ blockquote {
   position: relative;
   z-index: 1;
   background-color: #1488cc;
+}
+.underline.white {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
 }
 
 .underline.no-bottom-border {
@@ -1585,7 +1590,7 @@ blockquote {
   top: 0px;
   right: 0px;
   display: block;
-  height: 86px;
+  height: 70px;
   background-color: #fff;
 }
 
@@ -2176,6 +2181,9 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   .underline.crimson {
     margin-bottom: 2%;
   }
+  .underline.white {
+    margin-bottom: 2%;
+  }
   .cursive-text {
     font-size: 3.4vw;
     line-height: 1.55em;
@@ -2648,7 +2656,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   font-stretch: normal;
   line-height: 1.09;
   letter-spacing: 0.6px;
-  color:#000;
+  color: #1b1b1b;
   display: table-cell;
   vertical-align: middle;
 }
@@ -2690,7 +2698,14 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   line-height: 1.09;
   letter-spacing: 0.6px;
   color:#fff;
-  text-align:center;
+  text-align: center;
+}
+
+@media screen and (min-width: 967px){
+.about-padding{
+  padding-left: 9%;
+  padding-right: 5%;
+}
 }
 
 .aboutus-text{
@@ -2748,6 +2763,10 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     align:center;
     max-width:100px;
   }
+  .track-icon{
+    height:60px;
+    margin-bottom:-40px;
+  }
 }
 
 .col_one_third {
@@ -2781,7 +2800,7 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   padding : 23 0px;
 }
 .techloop-content{
-    padding : 4%;
+    padding : 10% 4% 4% 4%;
 }
 .text-techloop-bold{
   text-align : center;
@@ -2794,8 +2813,23 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5%;
     color : #000;
 }
+.track-icon{
+  height : 120px;
+}
+.track-icon>img{
+    margin-top:20px;
+    height : 60%;
+}
 .domain-headline{
-    padding : 5% 0 0 0;
+    margin-top:25px;
+    text-align : left;
+}
+.track-description{
+    text-align: justify;
+    text-justify: inter-word;
+    background-color: #fff;
+    margin : 5% 0 0 0;
+    padding : 3% 0;
 }
 .light-headings-text{
   padding : 0 0 5% 0;
@@ -3188,7 +3222,7 @@ a:hover, a:focus, a:active {
   content: '' !important;
   z-index: -1 !important;
   height: 40px;
-  border-radius: 2em !important;
+  border-radius: 1.5em !important;
   -webkit-filter: blur(14px) brightness(0.9) !important;
   filter: blur(14px) brightness(0.9) !important;
   -webkit-transform-style: preserve-3d !important;
@@ -3349,5 +3383,77 @@ a:hover, a:focus, a:active {
     -ms-transform: rotate(45deg); /* IE 9 */
     -webkit-transform: rotate(45deg); /* Safari */
     transform: rotate(45deg);
+  }
+  .btn{
+    margin-top:-10px;
+  }
+}
+
+.label-container{
+  position:fixed;
+  bottom:48px;
+  right:105px;
+  display:table;
+  /*visibility: hidden;*/
+}
+
+.label-text{
+  color:#fff;
+  background:rgba(51,51,51,0.5);
+  display:table-cell;
+  vertical-align:middle;
+  padding:10px;
+  border-radius:3px;
+}
+
+.label-arrow{
+  display:table-cell;
+  vertical-align: top;
+  color:#4c78bc;
+  opacity:0.5;
+}
+
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color: #4b7cc6;
+  color:#fff;
+  border-radius:50px;
+  text-align:center;
+  box-shadow:  5px 5px 5px rgba(27, 27, 27, 0.75);
+}
+.my-float{
+  color : #fff;
+  font-size:24px;
+  margin-top:18px;
+}
+
+/*a.float + div.label-container {*/
+  /*visibility: hidden;*/
+  /*opacity: 0;*/
+  /*transition: visibility 0s, opacity 0.5s ease;*/
+/*}*/
+
+/*a.float:hover + div.label-container{*/
+  /*visibility: visible;*/
+  /*opacity: 1;*/
+/*}*/
+.ieee_pses{
+  margin : -5px 0 0 0;
+}
+.alert-iot{
+  padding : 5px;
+}
+
+@media (max-width: 600px){
+  .ieee_pses{
+    margin : 15px 0 0 0;
+  }
+  .domain-headline{
+    padding : 5% 0 0 0;
+    text-align : center;
   }
 }

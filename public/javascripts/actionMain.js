@@ -4317,3 +4317,32 @@ $('.faq-head').click(function(){
     // console.log($('#'+"faq5").find('.faq-body').is(":hidden"));
     // console.log(thisGrpId);
 });
+
+$(window).scroll(function() {
+    // if(screen.width<700) {
+        if ($(this).scrollTop() > screen.height*0.3) { //use `this`, not `document`
+            $('.label-container').css({
+                'visibility': 'hidden'
+            });
+        }
+        else {
+            $('.label-container').css({
+                'visibility': 'visible'
+            });
+        }
+    // }
+});
+
+$(document).ready(function(){
+    $(".float").hover(function(){
+        console.log("HEREE");
+        $('.label-container').css({
+            'visibility': 'visible'
+        });
+    }, function(){
+        $(this).css("background-color", "#06C;");
+        $('.label-container').css({
+            'visibility': 'hidden'
+        });
+    });
+});
