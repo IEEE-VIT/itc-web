@@ -955,7 +955,7 @@ blockquote {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  height: 20px;
+  height: 75px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -2698,7 +2698,14 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
   line-height: 1.09;
   letter-spacing: 0.6px;
   color:#fff;
-  text-align:center;
+  text-align: center;
+}
+
+@media screen and (min-width: 967px){
+.about-padding{
+  padding-left: 9%;
+  padding-right: 5%;
+}
 }
 
 .aboutus-text{
@@ -2756,6 +2763,10 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     align:center;
     max-width:100px;
   }
+  .track-icon{
+    height:60px;
+    margin-bottom:-40px;
+  }
 }
 
 .col_one_third {
@@ -2802,12 +2813,16 @@ html.w-mod-js *[data-ix="display-none-on-load-see-more-icon"] {
     padding : 5%;
     color : #000;
 }
+.track-icon{
+  height : 120px;
+}
 .track-icon>img{
-    height : 120px;
+    margin-top:20px;
+    height : 60%;
 }
 .domain-headline{
-    padding : 5% 0 0 0;
-  text-align : left;
+    margin-top:25px;
+    text-align : left;
 }
 .track-description{
     text-align: justify;
