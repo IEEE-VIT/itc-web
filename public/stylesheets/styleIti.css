@@ -69,7 +69,7 @@ hr {
     position: absolute;
     z-index: -1;
     top: 70px;
-    bottom: 250px;
+    bottom: 150px;
     left: 50%;
     border-left: 2px solid #919a98;
     transform: translate(-50%);
@@ -92,7 +92,7 @@ hr {
     position: absolute;
     z-index: -1;
     top: 30px;
-    bottom: 220px;
+    bottom: 120px;
     left: 50%;
     border-left: 2px solid #919a98;
     transform: translate(-50%);
@@ -167,16 +167,17 @@ and (min-device-width : 1200px) {
     padding-right:3vh;
     padding-bottom:3vh;
 }
-.card-content{
-    width:65%;
-    /*query*/}
 .itiIcon{
-    margin-top: -100px; !important;
+    right: 0; !important;
+    margin-top: -80px; !important;
     float: left !important;
     top: 0;
     margin-left: 10vh !important;
     width: 100%;!important;
 }
+.card-content{
+    width:65%;
+    /*query*/}
 
 }
 
@@ -347,6 +348,7 @@ and (min-device-width : 800px) {
         margin-left: -20px;
     }
     #day1 {
+        margin-top:50px !important; 
         margin-left: 60px !important;
     }
 
@@ -382,15 +384,97 @@ and (min-device-width : 800px) {
 @media only screen
 and (max-device-width: 800px)
 and (min-device-width : 750px){
-    .techloopHead{
-        font-size: 2vh;
+     .time {
+        font-size: 2vh !important;
     }
-    #day1{
-        margin-top: 5px;
+
+    .content {
+        font-size: 1.5vh !important;
     }
-    .congressHead{
-        margin-bottom: -10px;
+
+    .ListHead::after {
+        margin-top: 20px;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 70px;
+        bottom: 80px !important;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+
+    .ListHead2 {
+        position: absolute;
+        margin-left: 100px;
+        margin-top: 40px;
+        border-bottom: 2px solid #c4c2c2;
+        width: 52%;
+    }
+
+    .row {
+        padding: 0.4vh;
+    }
+
+    .card-content {
+        margin-left: 2vh;
+        width: 60%;
+    }
+
+    .congressHead {
+        position: absolute;
         font-size: 2vh;
+        /*z-index: -100;*/
+        margin-top: 5vh;
+        /*margin-left: 10px;*/
+        /*margin-bottom: 9vh;*/
+    }
+    .day2:after{
+        bottom: 70px;        
+    }
+    .day3::after {
+        top: 50px;
+        bottom: 70px;
+        left: 50%;
+        border-left: 2px solid #919a98;
+        transform: translate(-50%);
+    }
+
+    .congressHead {
+        margin-top: 3px;
+        margin-left: -20px;
+    }
+    #day1 {
+        margin-top:5px;
+        margin-left: 60px !important;
+    }
+
+    #day2 {
+        margin-top: 3.4vh;
+    }
+    #day3 {
+        margin-top: 3.4vh;
+    }
+
+    #day1, #day2, #day3 {
+        font-size: 1.4vh;
+        width: 70%;
+    }
+    .timelineIcon{
+        height:4vh !important;
+        vertical-align: center;
+        position:absolute;
+        top:0;
+        bottom:0;
+        margin:auto;
+        width:auto;
+    }
+
+    /*.ListHead2 {*/
+        /*display: none !important;*/
+    /*}*/
+    #head{
+        font-size: 4vh;
     }
 
 
@@ -399,6 +483,14 @@ and (min-device-width : 750px){
 @media only screen
 and (max-device-width: 520px)
 and (min-device-width : 380px) {
+   
+    .itiIcon{
+        width: 70%;!important;
+/*         height:1px; */
+      
+    }
+    
+
     .date{
         font-size: 3vh !important;
     }
@@ -446,7 +538,7 @@ and (min-device-width : 380px) {
 
     .card-content {
         margin-left: 4vh;
-        width: 60%;
+        width: 70%;
     }
 
     .congressHead {
@@ -491,6 +583,12 @@ and (min-device-width : 360px){
 @media only screen
 and (max-device-width: 380px)
 and (min-device-width : 200px) {
+     
+    .card{
+        margin-left:15px !important;
+        margin-right:5px !important;
+    }
+
     .time {
         font-size: 3vh !important;
     }
@@ -508,7 +606,7 @@ and (min-device-width : 200px) {
 
     .col {
         /*margin-left: 20px !important;*/
-        margin-right: -32px !important;
+/*         margin-right: -32px !important; */
     }
 
     .card-content {
@@ -526,7 +624,7 @@ and (min-device-width : 200px) {
 
     .congressHead {
         margin-top: 3vh;
-        margin-left: -15px;
+/*         margin-left: -15px; */
         margin-bottom: 4vh;
     }
 
@@ -562,4 +660,3 @@ and (min-device-width : 200px) {
         margin-left: 5px;
     }
 }
-
