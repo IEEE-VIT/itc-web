@@ -949,6 +949,12 @@ blockquote {
   transform: scale(1.022);
 }
 
+@media screen and (min-width: 1300px) {
+  .pad-nav {
+    padding-left: 50px;
+  }
+}
+
 .navbar {
   display: -webkit-box;
   display: -webkit-flex;
