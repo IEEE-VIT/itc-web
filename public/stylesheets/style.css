@@ -899,7 +899,7 @@ blockquote {
 .nav-link {
   position: relative;
   overflow: hidden;
-  padding: 21px 20px 20px;
+  padding: 21px 2% 20px;
   -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
@@ -910,6 +910,7 @@ blockquote {
   font-weight: 800;
   letter-spacing: 0.5px;
   text-decoration: none;
+
 }
 
 .nav-link:hover{
@@ -947,6 +948,12 @@ blockquote {
   -webkit-transform: scale(1.022);
   -ms-transform: scale(1.022);
   transform: scale(1.022);
+}
+
+@media screen and (min-width: 1300px) {
+  .pad-nav {
+    padding-left: 80px;
+  }
 }
 
 .navbar {
